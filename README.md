@@ -167,8 +167,8 @@ This project deploys via **GitHub Actions** (direct deployment) — not a manual
 
 1. **Push trigger**: On every push to `main`/`master`, or via manual `workflow_dispatch`, the workflow runs.
 2. **JSON validation**: The workflow validates all `data/*.json` and `i18n/*.json` files. If any file is invalid, the workflow fails and no deployment occurs.
-3. **Build job**: Uploads all project files as a Pages artifact named `github-pages`.
-4. **Deploy job**: Downloads the artifact and publishes it to GitHub Pages via the `deploy-pages` action, which internally manages the `gh-pages` branch.
+3. **Upload**: All project files are uploaded as a Pages artifact via `actions/upload-pages-artifact@v3`.
+4. **Deploy**: The `actions/deploy-pages@v4` action publishes the artifact to GitHub Pages, handling the `gh-pages` branch internally.
 
 ### Concurrency (Per-Branch)
 
@@ -179,7 +179,7 @@ concurrency:
   group: pages-${{ github.ref }}
 ```
 
-This ensures that pushes to different branches don't cancel each other's deployments, while rapid pushes to the same branch (e.g., during rapid iteration) will cancel in-progress runs to keep things efficient.
+This ensures that pushes to different branches deploy independently. For rapid pushes to the same branch, only the latest run is allowed to proceed — any previously queued run is cancelled automatically.
 
 ### Step-by-Step Setup
 
