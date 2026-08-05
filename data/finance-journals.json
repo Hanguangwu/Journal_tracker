@@ -1,0 +1,143 @@
+[
+  {
+    "id": "jfe",
+    "name": "Journal of Financial Economics",
+    "type": "journal",
+    "discipline": "finance",
+    "subfield": ["corporate-finance", "asset-pricing", "financial-intermediation"],
+    "issn": "0304-405X",
+    "publisher": "Elsevier (Society for Financial Studies)",
+    "website": "https://www.sciencedirect.com/journal/journal-of-financial-economics",
+    "submitLink": "https://mc.manuscriptcentral.com/jfe",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": "hybrid",
+      "pageLimit": "No hard limit; typically 30-50 pages",
+      "format": "PDF (APA style preferred); LaTeX/Word acceptable",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "4-6 months",
+      "impactFactor": 7.2,
+      "acceptanceRate": "~3-4%",
+      "fee": "No submission fee; OA option: ~$3,500"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" },
+      { "type": "specialIssue", "date": "2026-09-15", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": true, "priority": "critical", "description": "ESG and Corporate Governance — special issue submission deadline" }
+    ]
+  },
+  {
+    "id": "rfs",
+    "name": "Review of Financial Studies",
+    "type": "journal",
+    "discipline": "finance",
+    "subfield": ["asset-pricing", "corporate-finance", "behavioral-finance"],
+    "issn": "0893-9454",
+    "publisher": "Oxford Academic (Society for Financial Studies)",
+    "website": "https://academic.oup/journal/rfs",
+    "submitLink": "https://mc.manuscriptcentral.com/rfs",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "No hard limit; typically 30-45 pages",
+      "format": "PDF; preferred formats LaTeX/Word",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "3-6 months",
+      "impactFactor": 5.9,
+      "acceptanceRate": "~4-5%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "jf",
+    "name": "The Journal of Finance",
+    "type": "journal",
+    "discipline": "finance",
+    "subfield": ["corporate-finance", "asset-pricing", "investments"],
+    "issn": "0022-1082",
+    "publisher": "Wiley (American Finance Association)",
+    "website": "https://onlinelibrary.wiley.com/journal/15406261",
+    "submitLink": "https://mc.manuscriptcentral.com/jofi",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": "hybrid",
+      "pageLimit": "Typically 35-50 pages",
+      "format": "PDF; LaTeX/Word acceptable",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "4-7 months",
+      "impactFactor": 5.9,
+      "acceptanceRate": "~3%",
+      "fee": "No submission fee; OA option: ~$3,000"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "jfqa",
+    "name": "Journal of Financial and Quantitative Psychology",
+    "type": "journal",
+    "discipline": "finance",
+    "subfield": ["behavioral-finance"],
+    "issn": "0021-9527",
+    "publisher": "Cambridge University Press",
+    "website": "https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-psychology",
+    "submitLink": "",
+    "important": false,
+    "ranking": "A",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": "hybrid",
+      "pageLimit": "25-35 pages",
+      "format": "PDF, APA style",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "3-6 months",
+      "impactFactor": 2.8,
+      "acceptanceRate": "~10%",
+      "fee": "No submission fee; OA option: ~$2,500"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "jfrf",
+    "name": "Journal of Financial Research",
+    "type": "journal",
+    "discipline": "finance",
+    "subfield": ["investment", "real-estate"],
+    "issn": "0736-8025",
+    "publisher": "S&P Global (formerly Bloomberg)",
+    "website": "https://www.spglobal.com/marketintelligence/en/fii/institute/journal-of-financial-research",
+    "submitLink": "",
+    "important": false,
+    "ranking": "B",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": true,
+      "pageLimit": "20-30 pages",
+      "format": "PDF, APA style",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "2-4 months",
+      "impactFactor": "N/A (not indexed yet)",
+      "acceptanceRate": "~15%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "specialIssue", "date": "2025-11-30", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": true, "priority": "important", "description": "Digital Assets and Blockchain Finance — special issue call" }
+    ]
+  }
+]

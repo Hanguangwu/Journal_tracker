@@ -1,0 +1,119 @@
+{
+  "appTitle": "Journal & Conference Tracker",
+  "subtitle": "Top-tier submission deadlines and requirements for CS, AI, History, Economics & Finance",
+  "nav": {
+    "home": "Dashboard",
+    "conferences": "Conferences",
+    "journals": "Journals",
+    "timeline": "Timeline",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Never Miss a Submission Deadline",
+    "subtitle": "Track top-tier conference and journal deadlines across CS, AI, History, Economics, and Finance in one place.",
+    "nextDeadline": "Next Critical Deadline",
+    "daysLeft": "days left"
+  },
+  "dashboard": {
+    "upcomingDeadlines": "Upcoming Deadlines",
+    "criticalDeadlines": "Critical Deadlines (Must Not Miss)",
+    "deadlineCount": "deadlines in the next 90 days",
+    "viewAll": "View All Venues"
+  },
+  "disciplines": {
+    "ai": "AI",
+    "cs": "Computer Science",
+    "history": "History",
+    "economics": "Economics",
+    "finance": "Finance"
+  },
+  "venueTypes": {
+    "conference": "Conference",
+    "journal": "Journal"
+  },
+  "priority": {
+    "critical": "Critical",
+    "important": "Important",
+    "normal": "Normal"
+  },
+  "priorityDesc": {
+    "critical": "Must not miss — missing this date means no submission possible",
+    "important": "Should not miss — affects final acceptance and publication",
+    "normal": "Informational — keep an eye on timeline"
+  },
+  "deadlineTypes": {
+    "abstract": "Abstract Deadline",
+    "submission": "Paper Submission",
+    "notification": "Notification",
+    "cameraReady": "Camera-Ready",
+    "registration": "Registration",
+    "specialIssue": "Special Issue",
+    "supplemental": "Supplemental Materials",
+    "withdraw": "Withdrawal Deadline"
+  },
+  "venueDetail": {
+    "requirements": "Submission Requirements",
+    "deadlines": "Key Deadlines",
+    "website": "Official Website",
+    "submit": "Submit",
+    "impactFactor": "Impact Factor",
+    "acceptanceRate": "Acceptance Rate",
+    "turnaround": "Turnaround Time",
+    "openAccess": "Open Access",
+    "anonymization": "Anonymization",
+    "format": "Format",
+    "pageLimit": "Page Limit",
+    "fee": "Fee",
+    "peerReview": "Peer-reviewed",
+    "saveToMyDates": "Save to My Dates",
+    "removeFromMyDates": "Remove from My Dates"
+  },
+  "timeline": {
+    "title": "Deadline Timeline",
+    "subtitle": "Visual timeline of upcoming submission deadlines",
+    "filterByDiscipline": "Filter by Discipline",
+    "filterByPriority": "Filter by Priority",
+    "noDeadlines": "No upcoming deadlines found."
+  },
+  "about": {
+    "title": "About This Tracker",
+    "description": "This is a pure static site that tracks submission deadlines and requirements for top-tier venues across Computer Science, Artificial Intelligence, History, Economics, and Finance. It is deployed via GitHub Actions and hosted on GitHub Pages — no backend required.",
+    "keyFeatures": [
+      "Pure frontend — no server runtime",
+      "Deployed via GitHub Actions + GitHub Pages",
+      "Deadline countdowns and visual timeline",
+      "Key deadline highlighting with priority colors",
+      "Bilingual support (English / Chinese)",
+      "Dark/light mode toggle",
+      "Search and filter by discipline, type, and priority"
+    ],
+    "contributing": "Have an update or new venue? Open a pull request!"
+  },
+  "search": {
+    "placeholder": "Search venues...",
+    "noResults": "No venues match your search.",
+    "allDisciplines": "All Disciplines",
+    "allTypes": "All Types",
+    "upcoming": "Upcoming",
+    "passed": "Passed",
+    "allDeadlines": "All Deadlines"
+  },
+  "savedDeadlines": "My Saved Dates",
+  "noSavedDeadlines": "You haven't saved any deadlines yet.",
+  "footer": {
+    "copyright": "Journal Tracker — Built with ❤️ by researchers, for researchers.",
+    "lastUpdated": "Last updated"
+  },
+  "actions": {
+    "viewDetails": "View Details",
+    "showMore": "Show More",
+    "loadMore": "Load More",
+    "backToTop": "Back to Top"
+  },
+  "status": {
+    "active": "Active",
+    "passed": "Passed",
+    "today": "Today",
+    "tomorrow": "Tomorrow"
+  }
+}

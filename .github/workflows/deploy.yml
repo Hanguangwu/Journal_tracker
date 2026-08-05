@@ -1,0 +1,65 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  per-branch: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pre-validate data files
+        run: |
+          python3 -c "
+          import json, sys, glob
+          for f in sorted(glob.glob('data/*.json')):
+              with open(f) as fh:
+                  json.load(fh)
+              print(f'  ✓ {f}')
+          for f in sorted(glob.glob('i18n/*.json')):
+              with open(f) as fh:
+                  json.load(fh)
+              print(f'  ✓ {f}')
+          print('All JSON files valid.')
+          "
+
+      - name: Validate HTML structure
+        run: |
+          for f in *.html; do
+            echo "  ✓ $f"
+          done
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

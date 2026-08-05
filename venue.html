@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    var id = new URLSearchParams(window.location.search).get("id") || "";
+    window.location.href = "./index.html#/venue?id=" + encodeURIComponent(id);
+  </script>
+  <meta http-equiv="refresh" content="0; url=./index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting…</title>
+  <noscript><a href="./index.html">Go to Dashboard</a></noscript>
+</head>
+<body>
+  <p>Redirecting…</p>
+</body>
+</html>

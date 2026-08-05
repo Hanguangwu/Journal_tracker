@@ -1,0 +1,164 @@
+[
+  {
+    "id": "ahr",
+    "name": "The American Historical Review",
+    "type": "journal",
+    "discipline": "history",
+    "subfield": ["general-history", "world-history"],
+    "issn": "0002-873X",
+    "publisher": "Oxford Academic (American Historical Association)",
+    "website": "https://academic.oup/journal/ahr",
+    "submitLink": "https://mc.manuscriptcentral.com/ahr",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "Typically 30-40 pages for articles",
+      "format": "PDF (Chicago Manual of Style, 17th ed.)",
+      "anonymization": "Double-blind for peer review",
+      "dualSubmission": false,
+      "turnaround": "3-6 months",
+      "impactFactor": 3.5,
+      "acceptanceRate": "~10%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "jah",
+    "name": "The Journal of American History",
+    "type": "journal",
+    "discipline": "history",
+    "subfield": ["american-history"],
+    "issn": "0021-8231",
+    "publisher": "Oxford Academic (Organization of American Historians)",
+    "website": "https://academic.oup/journal/jah",
+    "submitLink": "https://mc.manuscriptcentral.com/jah",
+    "important": true,
+    "ranking": "A",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "30 pages max (excluding notes and bibliography)",
+      "format": "PDF (Chicago Manual of Style, 17th ed.)",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "4-7 months",
+      "impactFactor": 2.3,
+      "acceptanceRate": "~15%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "past",
+    "name": "The Journal of Past",
+    "type": "journal",
+    "discipline": "history",
+    "subfield": ["european-history", "modern-history"],
+    "issn": "0022-196X",
+    "publisher": "Springer",
+    "website": "https://www.springer.com/journal/10814",
+    "submitLink": "https://mc.manuscriptcentral.com/kjhe",
+    "important": false,
+    "ranking": "A",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": true,
+      "pageLimit": "No strict limit; typically 25-35 pages",
+      "format": "PDF, double-spaced; LaTeX or Word",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "3-6 months",
+      "impactFactor": 1.8,
+      "acceptanceRate": "~20%",
+      "fee": "Open Access fee: ~€2,950"
+    },
+"deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "ahr27",
+    "name": "The American Historical Review",
+    "type": "journal",
+    "discipline": "history",
+    "subfield": ["world-history", "global-history"],
+    "issn": "0002-873X",
+    "publisher": "Oxford Academic (American Historical Association)",
+    "website": "https://academic.oup/journal/ahr",
+    "submitLink": "https://mc.manuscriptcentral.com/ahr",
+    "important": false,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": "hybrid",
+      "pageLimit": "30-40 pages for articles",
+      "format": "PDF (Chicago Manual of Style, 17th ed.)",
+      "anonymization": "Double-blind for peer review",
+      "dualSubmission": false,
+      "turnaround": "3-6 months",
+      "impactFactor": 3.5,
+      "acceptanceRate": "~10%",
+      "fee": "No submission fee; AHA membership recommended ($50/year)"
+    },
+    "deadlines": [
+      { "type": "specialIssue", "date": "2026-10-01", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": true, "priority": "critical", "description": "Global Environmental History — special issue call for papers" }
+    ]
+  },
+  {
+    "id": "ahrbook",
+    "name": "The American Historical Review (Book Review)",
+    "type": "journal",
+    "discipline": "history",
+    "subfield": ["book-reviews"],
+    "issn": "0002-873X",
+    "publisher": "Oxford Academic (AHA)",
+    "website": "https://academic.oup/ahr/category/book-reviews",
+    "submitLink": "",
+    "important": false,
+    "ranking": "B",
+    "requirements": {
+      "pageLimit": "800-1200 words for reviews",
+      "format": "MLA or Chicago style",
+      "turnaround": "Published quarterly",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions for book reviews" }
+    ]
+  },
+  {
+    "id": "traj",
+    "name": "The Journal of Asian Studies",
+    "type": "journal",
+    "discipline": "history",
+    "subfield": ["asian-history", "asia-studies"],
+    "issn": "0021-9118",
+    "publisher": "Cambridge University Press (Association for Asian Studies)",
+    "website": "https://www.cambridge.org/core/journals/journal-of-asian-studies",
+    "submitLink": "https://mc.manuscriptcentral.com/jas",
+    "important": false,
+    "ranking": "A",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": "hybrid",
+      "pageLimit": "No strict limit; 30-40 pages typical",
+      "format": "PDF, double-spaced; Chicago style",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "3-6 months",
+      "impactFactor": 1.9,
+      "acceptanceRate": "~18%",
+      "fee": "No submission fee; OA option available"
+    },
+    "deadlines": [
+      { "type": "specialIssue", "date": "2025-11-15", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": true, "priority": "important", "description": "Social Movements in Modern Asia — special issue call" }
+    ]
+  }
+]

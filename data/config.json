@@ -1,0 +1,50 @@
+{
+  "currentYear": 2025,
+  "nextYear": 2026,
+  "lastUpdated": "2025-09-12",
+  "timezone": "Asia/Shanghai",
+  "disciplines": {
+    "ai": { "name": "AI", "zh": "人工智能", "color": "bg-blue-500", "textColor": "text-blue-700", "border": "border-blue-500" },
+    "cs": { "name": "Computer Science", "zh": "计算机科学", "color": "bg-emerald-500", "textColor": "text-emerald-700", "border": "border-emerald-500" },
+    "history": { "name": "History", "zh": "历史学", "color": "bg-purple-500", "textColor": "text-purple-700", "border": "border-purple-500" },
+    "economics": { "name": "Economics", "zh": "经济学", "color": "bg-amber-500", "textColor": "text-amber-700", "border": "border-amber-500" },
+    "finance": { "name": "Finance", "zh": "金融学", "color": "bg-red-500", "textColor": "text-red-700", "border": "border-red-500" }
+  },
+  "priorityLevels": {
+    "critical": {
+      "text": "Critical",
+      "zh": "关键",
+      "color": "bg-red-500",
+      "textColor": "text-red-700",
+      "border": "border-red-500",
+      "ring": "ring-red-500",
+      "description": "Must not miss - missing this deadline means no submission possible"
+    },
+    "important": {
+      "text": "Important",
+      "zh": "重要",
+      "color": "bg-amber-500",
+      "textColor": "text-amber-700",
+      "border": "border-amber-500",
+      "ring": "ring-amber-500",
+      "description": "Should not miss - affects final acceptance and publication"
+    },
+    "normal": {
+      "text": "Normal",
+      "zh": "一般",
+      "color": "bg-gray-400",
+      "textColor": "text-gray-600",
+      "border": "border-gray-400",
+      "ring": "ring-gray-400",
+      "description": "Informational - keep an eye on timeline"
+    }
+  },
+  "deadlineTypes": {
+    "abstract": { "text": "Abstract Deadline", "zh": "摘要截稿", "icon": "📝", "color": "text-blue-600" },
+    "submission": { "text": "Paper Submission", "zh": "论文提交", "icon": "📄", "color": "text-red-600" },
+    "notification": { "text": "Notification", "zh": "录用通知", "icon": "🔔", "color": "text-emerald-600" },
+    "cameraReady": { "text": "Camera-Ready", "zh": "终稿截稿", "icon": "📷", "color": "text-purple-600" },
+    "registration": { "text": "Registration", "zh": "注册截止", "icon": "🎫", "color": "text-amber-600" },
+    "specialIssue": { "text": "Special Issue", "zh": "专刊征稿", "icon": "⭐", "color": "text-pink-600" }
+  }
+}

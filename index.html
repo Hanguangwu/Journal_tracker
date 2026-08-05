@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="appTitle">Journal & Conference Tracker</title>
+  <meta name="description" content="Track top-tier submission deadlines for CS, AI, History, Economics, and Finance">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body data-view="dashboard">
+
+  <!-- ===================== Navbar ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top z-50">
+    <div class="container">
+      <a class="navbar-brand flex items-center gap-2" href="#/">
+        <i class="bi bi-journal-bookmark"></i>
+        <span data-i18n="appTitle">Journal & Conference Tracker</span>
+      </a>
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#/" class="text-white hover:text-gray-200 transition"><i class="bi bi-house-door me-1"></i><span data-i18n="nav.home">Dashboard</span></a>
+        <a href="#/venues" class="text-white hover:text-gray-200 transition"><i class="bi bi-list-ul me-1"></i><span data-i18n="nav.conferences">Conferences</span></a>
+        <a href="#/journals" class="text-white hover:text-gray-200 transition"><i class="bi bi-book me-1"></i><span data-i18n="nav.journals">Journals</span></a>
+        <a href="#/timeline" class="text-white hover:text-gray-200 transition"><i class="bi bi-calendar-event me-1"></i><span data-i18n="nav.timeline">Timeline</span></a>
+        <a href="#/saved" class="text-white hover:text-gray-200 transition"><i class="bi bi-bookmark-star me-1"></i><span data-i18n="savedDeadlines">My Saved</span></a>
+        <a href="#/about" class="text-white hover:text-gray-200 transition"><i class="bi bi-info-circle me-1"></i><span data-i18n="nav.about">About</span></a>
+        <button id="langToggle" class="lang-toggle d-flex align-items-center"><span id="langLabel">EN</span></button>
+        <button id="themeToggle" class="theme-toggle d-flex align-items-center"><i id="themeIcon" class="bi bi-moon-fill"></i></button>
+      </div>
+      <button id="menuToggle" class="md:hidden text-white hover:text-gray-200 transition p-2" type="button"><i class="bi bi-list text-2xl"></i></button>
+    </div>
+    </div>
+  </nav>
+
+  <!-- ===================== Mobile Drawer Menu ===================== -->
+  <div id="mobile-menu">
+    <div class="menu-content">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-xl font-bold" data-i18n="nav.home">Home</h3>
+        <button id="mobileMenuClose" class="text-gray-500 hover:text-gray-700"><i class="bi bi-x-lg text-2xl"></i></button>
+      </div>
+      <div class="space-y-4">
+        <a href="#/" class="block py-3 text-lg" data-i18n="nav.home">Dashboard</a>
+        <a href="#/venues" class="block py-3 text-lg" data-i18n="nav.conferences">Conferences</a>
+        <a href="#/journals" class="block py-3 text-lg" data-i18n="nav.journals">Journals</a>
+        <a href="#/timeline" class="block py-3 text-lg" data-i18n="nav.timeline">Timeline</a>
+        <a href="#/saved" class="block py-3 text-lg" data-i18n="savedDeadlines">My Saved</a>
+        <a href="#/about" class="block py-3 text-lg" data-i18n="nav.about">About</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== Loading ===================== -->
+  <div id="loadingState" class="container mx-auto px-4 text-center py-20">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="mt-4 text-muted" data-i18n="loading">Loading...</p>
+  </div>
+
+  <!-- ===================== Main Content (ALL views — JS shows/hides) ===================== -->
+  <main class="container mx-auto px-4 py-6">
+
+    <!-- ===== DASHBOARD ===== -->
+    <div id="dashboardContent" class="hidden">
+      <section class="text-center mb-8 fade-in">
+        <h1 class="text-3xl md:text-4xl font-bold mb-3 text-gradient" data-i18n="hero.title">Never Miss a Submission Deadline</h1>
+        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto" data-i18n="hero.subtitle">Track top-tier conference and journal deadlines across CS, AI, History, Economics, and Finance in one place.</p>
+      </section>
+
+      <section class="mb-8 fade-in" style="animation-delay: 0.1s">
+        <div class="countdown-banner text-center">
+          <div class="mb-2"><span class="text-sm font-medium" data-i18n="hero.nextDeadline">Next Critical Deadline</span></div>
+          <div id="nextDeadlineName" class="text-xl md:text-2xl font-bold mb-2">—</div>
+          <div class="countdown-value mb-2" id="countdownTimer">
+            <span>00</span> : <span>00</span> : <span>00</span>
+          </div>
+          <div class="text-sm opacity-90">
+            <span id="countdownDate"> —</span>
+            <span class="mx-2">•</span>
+            <span id="countdownVenue"> —</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10 fade-in" style="animation-delay: 0.2s">
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          <i class="bi bi-lightning-charge text-red-500 text-3xl animate-pulse"></i>
+          <span data-i18n="dashboard.criticalDeadlines">Critical Deadlines (Must Not Miss)</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="priorityDesc.critical">Must not miss — missing this date means no submission possible</p>
+        <div id="criticalDeadlinesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        <div id="noCriticalDeadlines" class="hidden text-center py-8 text-gray-500 dark:text-gray-400">
+          <i class="bi bi-calendar-check text-4xl mb-3"></i>
+          <p data-i18n="search.noResults">No critical deadlines found at this time.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 fade-in" style="animation-delay: 0.3s">
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          <i class="bi bi-calendar-event text-blue-500"></i>
+          <span data-i18n="dashboard.upcomingDeadlines">Upcoming Deadlines</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-3 text-sm" id="deadlineCountText">
+          <span id="upcomingCount">0</span> <span data-i18n="dashboard.deadlineCount">deadlines in the next 90 days</span>
+        </p>
+        <div id="upcomingTimeline" class="timeline"></div>
+        <div id="noUpcomingDeadlines" class="hidden text-center py-8 text-gray-500 dark:text-gray-400">
+          <i class="bi bi-calendar text-4xl mb-3"></i>
+          <p data-i18n="timeline.noDeadlines">No upcoming deadlines found.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 fade-in" style="animation-delay: 0.4s">
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          <i class="bi bi-arc-toolkit text-purple-500"></i>
+          <span data-i18n="hero.subtitle">Browse by Discipline</span>
+        </h2>
+        <div id="disciplineCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"></div>
+      </section>
+
+      <section class="mb-8 fade-in" style="animation-delay: 0.5s">
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#/venues" class="px-6 py-3 bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-lg transition flex items-center gap-2">
+            <i class="bi bi-list-ul text-blue-500"></i>
+            <span data-i18n="dashboard.viewAll">View All Venues</span>
+          </a>
+          <a href="#/timeline" class="px-6 py-3 bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-lg transition flex items-center gap-2">
+            <i class="bi bi-calendar-week text-red-500"></i>
+            <span data-i18n="nav.timeline">Full Timeline</span>
+          </a>
+          <a href="#/saved" class="px-6 py-3 bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-lg transition flex items-center gap-2">
+            <i class="bi bi-bookmark-star text-amber-500"></i>
+            <span data-i18n="savedDeadlines">My Saved Dates</span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== VENUES LISTING ===== -->
+    <div id="venuesContent" class="hidden">
+      <section class="mb-6">
+        <h1 class="text-2xl md:text-3xl font-bold mb-3 text-gradient" data-i18n="search.placeholder">Search Venues</h1>
+        <p class="text-gray-600 dark:text-gray-300" data-i18n="hero.subtitle">Search and filter top-tier venues by discipline, type, and deadline</p>
+      </section>
+
+      <section class="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow p-4">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex-1 relative">
+            <input type="text" id="searchInput" class="form-control w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500" data-i18n-placeholder="search.placeholder" />
+            <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <select id="disciplineFilter" class="form-select px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+              <option value="all" data-i18n="search.allDisciplines">All Disciplines</option>
+              <option value="ai">AI</option>
+              <option value="cs">Computer Science</option>
+              <option value="history">History</option>
+              <option value="economics">Economics</option>
+              <option value="finance">Finance</option>
+            </select>
+            <select id="typeFilter" class="form-select px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+              <option value="all" data-i18n="search.allTypes">All Types</option>
+              <option value="conference" data-i18n="venueTypes.conference">Conference</option>
+              <option value="journal" data-i18n="venueTypes.journal">Journal</option>
+            </select>
+            <select id="priorityFilter" class="form-select px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+              <option value="all" data-i18n="search.allDeadlines">All Deadlines</option>
+              <option value="critical" data-i18n="priority.critical">Critical</option>
+              <option value="important" data-i18n="priority.important">Important</option>
+              <option value="normal" data-i18n="priority.normal">Normal</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-4 flex flex-wrap justify-between items-center">
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          <span id="resultCount">0</span> <span data-i18n="search.noResults">venues found</span>
+        </p>
+        <select id="sortSelect" class="form-select px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white max-w-xs">
+          <option value="deadline" data-i18n="search.upcoming">Soonest Deadline</option>
+          <option value="name" data-i18n="search.placeholder">Name</option>
+          <option value="discipline" data-i18n="search.allDisciplines">Discipline</option>
+        </select>
+      </section>
+
+      <section>
+        <div id="venuesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        <div id="noVenuesFound" class="hidden text-center py-12 text-gray-500 dark:text-gray-400">
+          <i class="bi bi-emoji-frown text-4xl mb-3"></i>
+          <p data-i18n="search.noResults">No venues match your search.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== VENUE DETAIL ===== -->
+    <div id="venueContent" class="hidden">
+      <div class="mb-4">
+        <a href="#/venues" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 flex items-center gap-1 mb-4">
+          <i class="bi bi-arrow-left"></i>
+          <span data-i18n="actions.viewDetails">Back to Venues</span>
+        </a>
+      </div>
+      <section id="venueHeader"></section>
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div id="requirementsSection"></div>
+        <div id="deadlinesTimeline"></div>
+      </section>
+      <section id="savedActions" class="hidden"></section>
+    </div>
+
+    <!-- ===== TIMELINE ===== -->
+    <div id="timelineContent" class="hidden">
+      <section class="mb-6">
+        <h1 class="text-2xl md:text-3xl font-bold mb-3 text-gradient" data-i18n="timeline.title">Deadline Timeline</h1>
+        <p class="text-gray-600 dark:text-gray-300" data-i18n="timeline.subtitle">Visual timeline of upcoming submission deadlines</p>
+      </section>
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-700 p-4 mb-6">
+        <div class="flex flex-wrap gap-4">
+          <select id="timelineDisciplineFilter" class="form-select px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+            <option value="all" data-i18n="search.allDisciplines">All Disciplines</option>
+            <option value="ai">AI</option>
+            <option value="cs">Computer Science</option>
+            <option value="history">History</option>
+            <option value="economics">Economics</option>
+            <option value="finance">Finance</option>
+          </select>
+          <select id="timelinePriorityFilter" class="form-select px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+            <option value="all" data-i18n="search.allDeadlines">All Priorities</option>
+            <option value="critical" data-i18n="priority.critical">Critical</option>
+            <option value="important" data-i18n="priority.important">Important</option>
+          </select>
+        </div>
+      </div>
+      <div id="timelineList" class="timeline"></div>
+      <div id="noTimelineDeadlines" class="hidden text-center py-8 text-gray-500 dark:text-gray-400">
+        <i class="bi bi-calendar text-4xl mb-3"></i>
+        <p data-i18n="timeline.noDeadlines">No upcoming deadlines found.</p>
+      </div>
+    </div>
+
+    <!-- ===== SAVED VENUES ===== -->
+    <div id="savedContent" class="hidden">
+      <section class="mb-6">
+        <h1 class="text-2xl md:text-3xl font-bold mb-3 text-gradient" data-i18n="savedDeadlines">My Saved Dates</h1>
+        <p class="text-gray-600 dark:text-gray-300" data-i18n="noSavedDeadlines">Venues you've saved will appear here</p>
+      </section>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <div id="aboutContent" class="hidden"></div>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="bg-gray-100 dark:bg-gray-900 py-6 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-600 dark:text-gray-400" data-i18n="footer.copyright">Journal Tracker — Pure frontend, deployed via GitHub Actions</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+        <span data-i18n="footer.lastUpdated">Last updated</span>: <span id="lastUpdatedDate"> —</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

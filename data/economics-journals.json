@@ -1,0 +1,200 @@
+[
+  {
+    "id": "aer",
+    "name": "American Economic Review",
+    "type": "journal",
+    "discipline": "economics",
+    "subfield": ["macroeconomics", "labor", "public"],
+    "issn": "0002-8286",
+    "publisher": "American Economic Association",
+    "website": "https://www.aeaweb.org/journals/aer",
+    "submitLink": "https://mc.manuscriptcentral.com/americaneaconrev",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "No hard page limit; recommended ~50 pages",
+      "format": "PDF via AEA LaTeX/Word template",
+      "anonymization": "Optional for initial submission (double-blind after acceptance)",
+      "dualSubmission": false,
+      "turnaround": "3-6 months average for first round",
+      "impactFactor": 6.9,
+      "acceptanceRate": "5-10%",
+      "fee": "No submission fee; AEA membership recommended (~$50/year)"
+    },
+"deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-06:00", "timezone": "America/Chicago", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" },
+      { "type": "specialIssue", "date": "2025-10-15", "time": "23:59:59-05:00", "timezone": "America/Chicago", "important": true, "priority": "important", "description": "Climate Change and the Macroeconomy — special issue call" },
+      { "type": "specialIssue", "date": "2026-09-30", "time": "23:59:59-05:00", "timezone": "America/Chicago", "important": true, "priority": "critical", "description": "AI Applications in Economics — special issue abstract deadline" }
+    ]
+  },
+  {
+    "id": "econometrica",
+    "name": "Econometrica",
+    "type": "journal",
+    "discipline": "economics",
+    "subfield": ["theoretical-economics", "econometrics"],
+    "issn": "0012-9682",
+    "publisher": "Wiley (on behalf of the Econometric Society)",
+    "website": "https://onlinelibrary.wiley.com/journal/14680262",
+    "submitLink": "https://mc.manuscriptcentral.com/econometrica",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "No hard limit; conciseness encouraged",
+      "format": "PDF, double-spaced; final version via LaTeX",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "4-6 months for first round",
+      "impactFactor": 5.8,
+      "acceptanceRate": "6-8%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/Chicago", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "jpe",
+    "name": "Journal of Political Economy",
+    "type": "journal",
+    "discipline": "economics",
+    "subfield": ["macroeconomics", "labor", "industrial-organization"],
+    "issn": "0022-3808",
+    "publisher": "University of Chicago Press",
+    "website": "https://www.journals.uchicago.edu/toc/jpe/current",
+    "submitLink": "https://mc.manuscriptcentral.com/jpe",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "No hard limit, but typically 30-50 pages",
+      "format": "PDF, double-spaced; final LaTeX preferred",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "3-6 months",
+      "impactFactor": 6.2,
+      "acceptanceRate": "~5%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-06:00", "timezone": "America/Chicago", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "qje",
+    "name": "The Quarterly Journal of Economics",
+    "type": "journal",
+    "discipline": "economics",
+    "subfield": ["macroeconomics", "labor", "public-economics"],
+    "issn": "0033-5821",
+    "publisher": "Oxford Academic (Harvard University)",
+    "website": "https://academic.oup/journal/qje",
+    "submitLink": "",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "Typically 40-50 pages",
+      "format": "PDF, double-spaced",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "4-8 months",
+      "impactFactor": 5.6,
+      "acceptanceRate": "~4%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/New_York", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "rest",
+    "name": "Review of Economic Studies",
+    "type": "journal",
+    "discipline": "economics",
+    "subfield": ["macroeconomics", "microeconomics", "labor"],
+    "issn": "0034-6543",
+    "publisher": "Oxford Academic (Review of Economic Studies Ltd.)",
+    "website": "https://academic.oup/journal/restud",
+    "submitLink": "https://mc.manuscriptcentral.com/restud",
+    "important": true,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "No hard limit; typically 30-60 pages",
+      "format": "PDF, double-spaced; LaTeX preferred for final",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "3-6 months",
+      "impactFactor": 5.0,
+      "acceptanceRate": "~6%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "Europe/London", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "aje",
+    "name": "Journal of Economic Literature",
+    "type": "journal",
+    "discipline": "economics",
+    "subfield": ["general-economics", "survey"],
+    "issn": "0895-3309",
+    "publisher": "American Economic Association",
+    "website": "https://www.aeaweb.org/journals/jel",
+    "submitLink": "",
+    "important": false,
+    "ranking": "A*",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "No hard limit; survey papers typically 6,000-12,000 words",
+      "format": "PDF via AEA template",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "4-6 months",
+      "impactFactor": 8.5,
+      "acceptanceRate": "N/A (invited/unsolicited surveys)",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/Chicago", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  },
+  {
+    "id": "aea-papers",
+    "name": "American Economic Journal: Applied Economics",
+    "type": "journal",
+    "discipline": "economics",
+    "subfield": ["applied-economics"],
+    "issn": "1944-7914",
+    "publisher": "American Economic Association",
+    "website": "https://www.aeaweb.org/journals/applied",
+    "submitLink": "https://mc.manuscriptcentral.com/aea-papers",
+    "important": false,
+    "ranking": "A",
+    "requirements": {
+      "peerReview": true,
+      "openAccess": false,
+      "pageLimit": "Typically 20-35 pages",
+      "format": "PDF via AEA template",
+      "anonymization": "Double-blind",
+      "dualSubmission": false,
+      "turnaround": "3-5 months",
+      "impactFactor": 4.8,
+      "acceptanceRate": "10-15%",
+      "fee": "No submission fee"
+    },
+    "deadlines": [
+      { "type": "submission", "date": "2025-12-31", "time": "23:59:59-05:00", "timezone": "America/Chicago", "important": false, "priority": "normal", "description": "Rolling submissions accepted year-round" }
+    ]
+  }
+]
