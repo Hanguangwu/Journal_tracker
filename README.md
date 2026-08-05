@@ -167,8 +167,8 @@ This project deploys via **GitHub Actions** (direct deployment) — not a manual
 
 1. **Push trigger**: On every push to `main`/`master`, or via manual `workflow_dispatch`, the workflow runs.
 2. **JSON validation**: The workflow validates all `data/*.json` and `i18n/*.json` files. If any file is invalid, the workflow fails and no deployment occurs.
-3. **Artifact upload**: All project files are uploaded as a Pages artifact.
-4. **Deploy**: The `deploy-pages` action publishes the artifact to GitHub Pages, handling the `gh-pages` branch behind the scenes.
+3. **Build job**: Uploads all project files as a Pages artifact named `github-pages`.
+4. **Deploy job**: Downloads the artifact and publishes it to GitHub Pages via the `deploy-pages` action, which internally manages the `gh-pages` branch.
 
 ### Concurrency (Per-Branch)
 
