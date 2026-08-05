@@ -59,25 +59,28 @@ p, label, .text-muted {
 /* — Navbar — */
 
 .navbar {
-  background: var(--gradient-primary) !important;
+  background: transparent;
   border: none;
-  box-shadow: var(--shadow-elegant);
-  backdrop-filter: blur(10px);
-  transition: var(--transition);
+  box-shadow: none;
+  padding: 0.5rem;
 }
 
 .navbar-brand {
   font-weight: 700;
   font-size: 1.5rem;
-  color: white !important;
+  color: #1f2937 !important;
+}
+
+[data-theme="dark"] .navbar-brand {
+  color: #f9fafb !important;
 }
 
 .theme-toggle,
 .lang-toggle {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
   border-radius: 50px;
-  color: white;
+  color: #667eea;
   transition: var(--transition);
   padding: 0.5rem 0.75rem;
   cursor: pointer;
@@ -85,8 +88,20 @@ p, label, .text-muted {
 
 .theme-toggle:hover,
 .lang-toggle:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(102, 126, 234, 0.2);
   transform: scale(1.05);
+}
+
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .lang-toggle {
+  background: rgba(132, 143, 239, 0.2);
+  border-color: rgba(132, 143, 239, 0.4);
+  color: #818cf8;
+}
+
+[data-theme="dark"] .theme-toggle:hover,
+[data-theme="dark"] .lang-toggle:hover {
+  background: rgba(132, 143, 239, 0.3);
 }
 
 /* — Cards — */

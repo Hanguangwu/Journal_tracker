@@ -12,27 +12,30 @@
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body data-view="dashboard">
+<body data-view="dashboard" class="flex flex-col min-h-screen">
 
   <!-- ===================== Navbar ===================== -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top z-50">
-    <div class="container">
-      <a class="navbar-brand flex items-center gap-2" href="#/">
-        <i class="bi bi-journal-bookmark"></i>
-        <span data-i18n="appTitle">Journal & Conference Tracker</span>
-      </a>
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#/" class="text-white hover:text-gray-200 transition"><i class="bi bi-house-door me-1"></i><span data-i18n="nav.home">Dashboard</span></a>
-        <a href="#/venues" class="text-white hover:text-gray-200 transition"><i class="bi bi-list-ul me-1"></i><span data-i18n="nav.conferences">Conferences</span></a>
-        <a href="#/journals" class="text-white hover:text-gray-200 transition"><i class="bi bi-book me-1"></i><span data-i18n="nav.journals">Journals</span></a>
-        <a href="#/timeline" class="text-white hover:text-gray-200 transition"><i class="bi bi-calendar-event me-1"></i><span data-i18n="nav.timeline">Timeline</span></a>
-        <a href="#/saved" class="text-white hover:text-gray-200 transition"><i class="bi bi-bookmark-star me-1"></i><span data-i18n="savedDeadlines">My Saved</span></a>
-        <a href="#/about" class="text-white hover:text-gray-200 transition"><i class="bi bi-info-circle me-1"></i><span data-i18n="nav.about">About</span></a>
-        <button id="langToggle" class="lang-toggle d-flex align-items-center"><span id="langLabel">EN</span></button>
-        <button id="themeToggle" class="theme-toggle d-flex align-items-center"><i id="themeIcon" class="bi bi-moon-fill"></i></button>
+  <nav class="sticky top-0 z-50 mb-6">
+    <div class="container mx-auto px-4">
+      <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 dark:border-gray-700/30">
+        <div class="flex items-center justify-between h-16 px-4">
+          <a class="flex items-center gap-2 text-xl font-bold" href="#/">
+            <i class="bi bi-journal-bookmark text-blue-500"></i>
+            <span data-i18n="appTitle" class="text-gradient">Journal & Conference Tracker</span>
+          </a>
+          <div class="hidden md:flex items-center gap-1">
+            <a href="#/" class="nav-item flex items-center gap-1 px-3 py-1.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="bi bi-house-door"></i><span data-i18n="nav.home">Dashboard</span></a>
+            <a href="#/venues" class="nav-item flex items-center gap-1 px-3 py-1.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="bi bi-list-ul"></i><span data-i18n="nav.conferences">Conferences</span></a>
+            <a href="#/journals" class="nav-item flex items-center gap-1 px-3 py-1.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="bi bi-book"></i><span data-i18n="nav.journals">Journals</span></a>
+            <a href="#/timeline" class="nav-item flex items-center gap-1 px-3 py-1.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="bi bi-calendar-event"></i><span data-i18n="nav.timeline">Timeline</span></a>
+            <a href="#/saved" class="nav-item flex items-center gap-1 px-3 py-1.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="bi bi-bookmark-star"></i><span data-i18n="savedDeadlines">My Saved</span></a>
+            <a href="#/about" class="nav-item flex items-center gap-1 px-3 py-1.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="bi bi-info-circle"></i><span data-i18n="nav.about">About</span></a>
+            <button id="langToggle" class="lang-toggle"><span id="langLabel">EN</span></button>
+            <button id="themeToggle" class="theme-toggle"><i id="themeIcon" class="bi bi-moon-fill"></i></button>
+          </div>
+          <button id="menuToggle" class="md:hidden p-2 text-gray-700 dark:text-gray-300" type="button"><i class="bi bi-list text-2xl"></i></button>
+        </div>
       </div>
-      <button id="menuToggle" class="md:hidden text-white hover:text-gray-200 transition p-2" type="button"><i class="bi bi-list text-2xl"></i></button>
-    </div>
     </div>
   </nav>
 
@@ -40,16 +43,16 @@
   <div id="mobile-menu">
     <div class="menu-content">
       <div class="flex justify-between items-center mb-6">
-        <h3 class="text-xl font-bold" data-i18n="nav.home">Home</h3>
-        <button id="mobileMenuClose" class="text-gray-500 hover:text-gray-700"><i class="bi bi-x-lg text-2xl"></i></button>
+        <h3 class="text-xl font-bold text-gradient" data-i18n="appTitle">Journal &amp; Conference Tracker</h3>
+        <button id="mobileMenuClose" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"><i class="bi bi-x-lg text-2xl"></i></button>
       </div>
-      <div class="space-y-4">
-        <a href="#/" class="block py-3 text-lg" data-i18n="nav.home">Dashboard</a>
-        <a href="#/venues" class="block py-3 text-lg" data-i18n="nav.conferences">Conferences</a>
-        <a href="#/journals" class="block py-3 text-lg" data-i18n="nav.journals">Journals</a>
-        <a href="#/timeline" class="block py-3 text-lg" data-i18n="nav.timeline">Timeline</a>
-        <a href="#/saved" class="block py-3 text-lg" data-i18n="savedDeadlines">My Saved</a>
-        <a href="#/about" class="block py-3 text-lg" data-i18n="nav.about">About</a>
+      <div class="space-y-2">
+        <a href="#/" class="flex items-center gap-3 py-3 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl px-3 transition" data-i18n="nav.home">Dashboard</a>
+        <a href="#/venues" class="flex items-center gap-3 py-3 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl px-3 transition" data-i18n="nav.conferences">Conferences</a>
+        <a href="#/journals" class="flex items-center gap-3 py-3 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl px-3 transition" data-i18n="nav.journals">Journals</a>
+        <a href="#/timeline" class="flex items-center gap-3 py-3 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl px-3 transition" data-i18n="nav.timeline">Timeline</a>
+        <a href="#/saved" class="flex items-center gap-3 py-3 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl px-3 transition" data-i18n="savedDeadlines">My Saved</a>
+        <a href="#/about" class="flex items-center gap-3 py-3 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl px-3 transition" data-i18n="nav.about">About</a>
       </div>
     </div>
   </div>
@@ -61,7 +64,7 @@
   </div>
 
   <!-- ===================== Main Content (ALL views — JS shows/hides) ===================== -->
-  <main class="container mx-auto px-4 py-6">
+  <main class="flex-1 container mx-auto px-4 py-6">
 
     <!-- ===== DASHBOARD ===== -->
     <div id="dashboardContent" class="hidden">
@@ -255,12 +258,10 @@
   </main>
 
   <!-- ===================== Footer ===================== -->
-  <footer class="bg-gray-100 dark:bg-gray-900 py-6 mt-12">
+  <footer class="bg-gray-100 dark:bg-gray-900 py-4 mt-auto">
     <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-600 dark:text-gray-400" data-i18n="footer.copyright">Journal Tracker — Pure frontend, deployed via GitHub Actions</p>
-      <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-        <span data-i18n="footer.lastUpdated">Last updated</span>: <span id="lastUpdatedDate"> —</span>
-      </p>
+      <p class="text-gray-600 dark:text-gray-400" data-i18n="footer.copyright">© Journal & Conference Tracker</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="footer.allRightsReserved">All Rights Reserved</p>
     </div>
   </footer>
 

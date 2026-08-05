@@ -11,6 +11,8 @@
   "hero": {
     "title": "永远不错过投稿截止日期",
     "subtitle": "在一个地方追踪计算机科学、人工智能、历史学、经济学和金融学顶级会议和期刊的截止日期。",
+    "subtitleConferences": "按学科、截止日期和排名搜索和筛选顶级会议",
+    "subtitleJournals": "按学科、影响因子和截止日期搜索和筛选顶级期刊",
     "nextDeadline": "下一个关键截止日期",
     "daysLeft": "天后截止"
   },
@@ -101,7 +103,8 @@
   "savedDeadlines": "我的追踪列表",
   "noSavedDeadlines": "你还没有保存任何截止日期。",
   "footer": {
-    "copyright": "期刊追踪器 — 由研究人员为研究人员打造。",
+    "copyright": "© 期刊与会议追踪器",
+    "allRightsReserved": "保留所有权利",
     "lastUpdated": "最后更新"
   },
   "actions": {

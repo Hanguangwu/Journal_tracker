@@ -159,6 +159,57 @@ for f in glob.glob('data/*.json') + glob.glob('i18n/*.json'):
 
 ---
 
+## 🚀 Deployment to GitHub Pages
+
+This project deploys via **GitHub Actions** (direct deployment) — not a manually-managed `gh-pages` branch. When you push to `main`, a workflow automatically builds, validates, and publishes the site. GitHub's `deploy-pages` action manages the `gh-pages` branch internally; you never need to create or maintain it yourself.
+
+### How It Works
+
+1. **Push trigger**: On every push to `main`/`master`, or via manual `workflow_dispatch`, the workflow runs.
+2. **JSON validation**: The workflow validates all `data/*.json` and `i18n/*.json` files. If any file is invalid, the workflow fails and no deployment occurs.
+3. **Artifact upload**: All project files are uploaded as a Pages artifact.
+4. **Deploy**: The `deploy-pages` action publishes the artifact to GitHub Pages, handling the `gh-pages` branch behind the scenes.
+
+### Concurrency (Per-Branch)
+
+The workflow uses a concurrency group keyed by branch ref:
+
+```yaml
+concurrency:
+  group: pages-${{ github.ref }}
+```
+
+This ensures that pushes to different branches don't cancel each other's deployments, while rapid pushes to the same branch (e.g., during rapid iteration) will cancel in-progress runs to keep things efficient.
+
+### Step-by-Step Setup
+
+1. **Push to GitHub** — commit and push your changes to `main`:
+
+   ```bash
+   git add .
+   git commit -m "Update venue deadlines"
+   git push origin main
+   ```
+
+2. **Watch the workflow** — go to your repo's **Actions** tab. You'll see the "Deploy to GitHub Pages" workflow running. Wait for it to complete (usually ~1 minute).
+
+3. **Configure Pages source** — one time only, go to **Settings → Pages** in your GitHub repo. Under "Build and deployment", set **Source** to **GitHub Actions**. (The workflow name will auto-populate.)
+
+4. **Visit your site** — once the workflow succeeds, your site is live at:
+   ```
+   https://<your-username>.github.io/<repo-name>/
+   ```
+
+### Manual Trigger
+
+You can also trigger a deployment manually from the **Actions** tab → "Deploy to GitHub Pages" → **Run workflow** dropdown → **Run workflow**.
+
+### What If JSON Validation Fails?
+
+If any `data/*.json` or `i18n/*.json` file has a syntax error, the workflow stops at the "Pre-validate data files" step and no deployment happens. Fix the JSON error, commit, and push again.
+
+---
+
 ## 📦 Tech Stack
 
 | Category | Technology |

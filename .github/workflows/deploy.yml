@@ -11,8 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  per-branch: true
+  group: pages-${{ github.ref }}
 
 jobs:
   build:

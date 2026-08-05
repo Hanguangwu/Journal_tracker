@@ -11,6 +11,8 @@
   "hero": {
     "title": "Never Miss a Submission Deadline",
     "subtitle": "Track top-tier conference and journal deadlines across CS, AI, History, Economics, and Finance in one place.",
+    "subtitleConferences": "Search and filter top-tier conferences by discipline, deadline, and ranking",
+    "subtitleJournals": "Search and filter top-tier journals by discipline, impact factor, and deadline",
     "nextDeadline": "Next Critical Deadline",
     "daysLeft": "days left"
   },
@@ -101,7 +103,8 @@
   "savedDeadlines": "My Saved Dates",
   "noSavedDeadlines": "You haven't saved any deadlines yet.",
   "footer": {
-    "copyright": "Journal Tracker — Built with ❤️ by researchers, for researchers.",
+    "copyright": "© Journal & Conference Tracker",
+    "allRightsReserved": "All Rights Reserved",
     "lastUpdated": "Last updated"
   },
   "actions": {

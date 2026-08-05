@@ -530,11 +530,39 @@
     if (content) content.classList.remove("hidden");
 
     const hash = window.location.hash;
+    const routePath = hash.split("?")[0].substring(1);
     const urlParams = new URLSearchParams(hash.replace(/^[^?]*\?/, ""));
     const discFilter = urlParams.get("discipline");
     if (discFilter) {
       const discSelect = document.getElementById("disciplineFilter");
       if (discSelect) discSelect.value = discFilter;
+    }
+
+    const typeSelect = document.getElementById("typeFilter");
+    const headingEl = document.querySelector("#venuesContent h1");
+    const subheadingEl = document.querySelector("#venuesContent p");
+    const t = STATE.translations[STATE.currentLang];
+
+    if (routePath === "/journals") {
+      if (typeSelect) typeSelect.value = "journal";
+      if (headingEl) {
+        headingEl.setAttribute("data-i18n", "nav.journals");
+        headingEl.textContent = t.nav?.journals || "Journals";
+      }
+      if (subheadingEl) {
+        subheadingEl.setAttribute("data-i18n", "hero.subtitleJournals");
+        subheadingEl.textContent = t.hero?.subtitleJournals || subheadingEl.textContent;
+      }
+    } else {
+      if (typeSelect) typeSelect.value = "conference";
+      if (headingEl) {
+        headingEl.setAttribute("data-i18n", "nav.conferences");
+        headingEl.textContent = t.nav?.conferences || "Conferences";
+      }
+      if (subheadingEl) {
+        subheadingEl.setAttribute("data-i18n", "hero.subtitleConferences");
+        subheadingEl.textContent = t.hero?.subtitleConferences || subheadingEl.textContent;
+      }
     }
 
     renderVenueGrid();
